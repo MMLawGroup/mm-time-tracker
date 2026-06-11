@@ -2,35 +2,28 @@
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
   xsi:type="MailApp">
-
   <Id>b2c3d4e5-f6a7-8901-bcde-f23456789012</Id>
-  <Version>1.0.0</Version>
+  <Version>1.0.0.0</Version>
   <ProviderName>Miller and Miller Law Group</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="MM Time Tracker"/>
-  <Description DefaultValue="Auto-track email time and bill to Lawmatics matters"/>
+  <Description DefaultValue="Track email time and bill to Lawmatics matters"/>
   <IconUrl DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/icon-128.png"/>
   <SupportUrl DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/"/>
-
   <AppDomains>
     <AppDomain>https://mmlawgroup.github.io</AppDomain>
     <AppDomain>https://app.lawmatics.com</AppDomain>
   </AppDomains>
-
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
-
   <Requirements>
     <Sets>
       <Set Name="Mailbox" MinVersion="1.1"/>
     </Sets>
   </Requirements>
-
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
@@ -45,12 +38,9 @@
       </DesktopSettings>
     </Form>
   </FormSettings>
-
   <Permissions>ReadWriteItem</Permissions>
-
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
   </Rule>
-
 </OfficeApp>
