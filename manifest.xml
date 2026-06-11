@@ -8,16 +8,20 @@
   <Version>1.0.0</Version>
   <ProviderName>Miller and Miller Law Group</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="M|M Time Tracker"/>
+  <DisplayName DefaultValue="MM Time Tracker"/>
   <Description DefaultValue="Auto-track email time and bill to Lawmatics matters"/>
-  <IconUrl DefaultValue="https://MMLawGroup.github.io/mm-time-tracker/icon.png"/>
-  <HighResolutionIconUrl DefaultValue="https://MMLawGroup.github.io/mm-time-tracker/icon.png"/>
+  <IconUrl DefaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_blue_white_letter-m.svg/64px-Eo_circle_blue_white_letter-m.svg.png"/>
+  <HighResolutionIconUrl DefaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_blue_white_letter-m.svg/128px-Eo_circle_blue_white_letter-m.svg.png"/>
   <SupportUrl DefaultValue="https://github.com/MMLawGroup/mm-time-tracker"/>
 
   <AppDomains>
-    <AppDomain>https://MMLawGroup.github.io</AppDomain>
+    <AppDomain>https://mmlawgroup.github.io</AppDomain>
     <AppDomain>https://app.lawmatics.com</AppDomain>
   </AppDomains>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
 
   <Requirements>
     <Sets>
@@ -28,13 +32,13 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://MMLawGroup.github.io/mm-time-tracker/taskpane.html"/>
+        <SourceLocation DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/taskpane.html"/>
         <RequestedHeight>380</RequestedHeight>
       </DesktopSettings>
     </Form>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://MMLawGroup.github.io/mm-time-tracker/taskpane.html"/>
+        <SourceLocation DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/taskpane.html"/>
         <RequestedHeight>380</RequestedHeight>
       </DesktopSettings>
     </Form>
