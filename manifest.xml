@@ -2,6 +2,8 @@
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
   xsi:type="MailApp">
 
   <Id>b2c3d4e5-f6a7-8901-bcde-f23456789012</Id>
@@ -10,9 +12,9 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="MM Time Tracker"/>
   <Description DefaultValue="Auto-track email time and bill to Lawmatics matters"/>
-  <IconUrl DefaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_blue_white_letter-m.svg/64px-Eo_circle_blue_white_letter-m.svg.png"/>
-  <HighResolutionIconUrl DefaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_blue_white_letter-m.svg/128px-Eo_circle_blue_white_letter-m.svg.png"/>
-  <SupportUrl DefaultValue="https://github.com/MMLawGroup/mm-time-tracker"/>
+  <IconUrl DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/icon-128.png"/>
+  <SupportUrl DefaultValue="https://mmlawgroup.github.io/mm-time-tracker/"/>
 
   <AppDomains>
     <AppDomain>https://mmlawgroup.github.io</AppDomain>
@@ -25,7 +27,7 @@
 
   <Requirements>
     <Sets>
-      <Set Name="Mailbox" MinVersion="1.3"/>
+      <Set Name="Mailbox" MinVersion="1.1"/>
     </Sets>
   </Requirements>
 
