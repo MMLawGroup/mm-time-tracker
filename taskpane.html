@@ -7,7 +7,7 @@
   <style>
     * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
     body { padding: 10px; background: #f0f2f5; font-size: 13px; }
-    h3 { color: #1a3a5c; font-size: 14px; margin-bottom: 8px; text-align: center; letter-spacing: 1px; }
+    h3 { color: #1a3a5c; font-size: 14px; text-align: center; letter-spacing: 1px; }
     .timer-box { background: #1a3a5c; border-radius: 8px; padding: 10px; text-align: center; margin-bottom: 8px; color: #fff; }
     #timer-display { font-size: 28px; font-weight: bold; letter-spacing: 3px; }
     .timer-label { font-size: 10px; opacity: 0.7; margin-top: 2px; }
@@ -19,49 +19,59 @@
     label { display: block; font-size: 11px; font-weight: 700; color: #555; margin-bottom: 3px; text-transform: uppercase; }
     select, textarea { width: 100%; padding: 6px 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 12px; margin-bottom: 8px; background: #fafafa; }
     textarea { resize: none; height: 48px; }
-    .rate-pill { display: inline-block; background: #e8f4ea; color: #1a7a4a; border-radius: 12px; padding: 2px 10px; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+    .rate-pill { display: inline-block; background: #e8f4ea; color: #1a7a4a; font-size: 12px; padding: 2px 10px; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
     #btn-log { width: 100%; background: #1a7a4a; color: #fff; padding: 10px; font-size: 13px; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; }
     #btn-log:disabled { background: #aaa; cursor: not-allowed; }
     #status-msg { margin-top: 8px; font-size: 11px; text-align: center; padding: 6px; border-radius: 5px; display: none; }
     .success { background: #d4edda; color: #155724; }
-    .error { background: #f8d7da; color: #721c24; }
+    .error   { background: #f8d7da; color: #721c24; }
     #auth-banner { background: #fff3cd; color: #856404; padding: 8px 10px; border-radius: 6px; font-size: 11px; margin-bottom: 8px; text-align: center; display: none; }
     #auth-banner button { background: #856404; color: #fff; border: none; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 11px; margin-top: 4px; }
+    #match-badge { display: none; background: #dbeafe; color: #1e40af; font-size: 11px; padding: 5px 8px; border-radius: 5px; margin-bottom: 6px; font-weight: 600; }
+    #match-badge::before { content: "\2713  "; }
   </style>
 </head>
 <body>
-  <h3>M|M TIME TRACKER</h3>
-  <div id="auth-banner">
-    <div>Connect to Lawmatics first</div>
-    <button onclick="startAuth()">Sign In to Lawmatics</button>
-  </div>
   <div class="timer-box">
+    <h3>M|M TIME TRACKER</h3>
     <div id="timer-display">00:00:00</div>
     <div class="timer-label" id="timer-label">Tracking time...</div>
   </div>
+
   <div class="btn-row">
     <button id="btn-pause" onclick="togglePause()">Pause</button>
     <button id="btn-reset" onclick="resetTimer()">Reset</button>
   </div>
+
+  <div id="auth-banner">
+    Sign in to Lawmatics to load matters.<br/>
+    <button onclick="startAuth()">Sign In</button>
+  </div>
+
   <div class="card">
     <label>Attorney</label>
     <select id="attorney-select" onchange="updateRate()">
-      <option value="Dan Miller" data-rate="600">Dan Miller ($600/hr)</option>
-      <option value="Roby"       data-rate="250">Roby ($250/hr)</option>
-      <option value="Tiffany"    data-rate="250">Tiffany ($250/hr)</option>
-      <option value="Morgan"     data-rate="125">Morgan ($125/hr)</option>
-      <option value="Robin"      data-rate="125">Robin ($125/hr)</option>
+      <option value="Dan Miller"     data-rate="600">Dan Miller ($600/hr)</option>
+      <option value="Roby"           data-rate="250">Roby ($250/hr)</option>
+      <option value="Tiffany"        data-rate="250">Tiffany ($250/hr)</option>
+      <option value="Morgan"         data-rate="125">Morgan ($125/hr)</option>
+      <option value="Robin"          data-rate="125">Robin ($125/hr)</option>
     </select>
-    <div class="rate-pill" id="rate-pill">$600.00 / hr</div>
+    <span class="rate-pill" id="rate-pill">$600.00 / hr</span>
+
     <label>Matter</label>
+    <div id="match-badge"></div>
     <select id="matter-select" onchange="checkReady()">
       <option value="">-- Loading matters... --</option>
     </select>
+
     <label>Description</label>
     <textarea id="note-input" placeholder="Email re: ..."></textarea>
   </div>
+
   <button id="btn-log" onclick="logTime()" disabled>Log Time to Lawmatics</button>
   <div id="status-msg"></div>
+
   <script src="taskpane.js"></script>
 </body>
 </html>
